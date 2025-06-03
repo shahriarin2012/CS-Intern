@@ -322,8 +322,9 @@ This project successfully simulated a real-world cybersecurity environment, enab
 
 *)Implement automated response playbooks in Security Onion for faster incident mitigation.
 
+*) Conduct red team vs. blue team exercises to enhance adversarial simulation
 
-*)Conduct red team vs. blue team exercises to enhance adversarial simulation
+
 -----------------------------------------------------------------------------
 
 
