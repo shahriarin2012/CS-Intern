@@ -54,6 +54,10 @@ VM Name       Purpose        Network Configuration        Key Tools
    ![alt text](image-1.png)  
 
    -----------------------------------------------------------------
+#Network Diagram
+
+![alt text](image-2.png)
+
 
    #  Step-by-Step Implementation
    # 3.1 pfSense Firewall Configuration 
@@ -233,7 +237,11 @@ This project successfully simulated a real-world cybersecurity environment, enab
 # Recommendations for Future Enhancements
 
 *)Incorporate a Windows Server VM to simulate enterprise-specific vulnerabilities.
+
+
 *)Implement automated response playbooks in Security Onion for faster incident mitigation.
+
+
 *)Conduct red team vs. blue team exercises to enhance adversarial simulation
 -----------------------------------------------------------------------------
 
