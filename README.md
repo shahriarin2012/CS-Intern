@@ -16,17 +16,17 @@ This report outlines the design and implementation of a comprehensive cybersecur
 
 The lab incorporates the following components:
 
-Kali Linux as the attacker machine
+*) Kali Linux as the attacker machine
 
-Metasploitable2 as the vulnerable target
+*) Metasploitable2 as the vulnerable target
 
-Security Onion as the monitoring and alerting system
+*) Security Onion as the monitoring and alerting system
 
-pfSense as the firewall and gateway
+*) pfSense as the firewall and gateway
 
-Ubuntu Server as an optional internal host
+*) Ubuntu Server as an optional internal host
 
-Primary Objectives:
+*) Primary Objectives:
 
 Build a controlled cybersecurity training lab
 
@@ -36,4 +36,21 @@ Conduct vulnerability assessments and penetration testing
 
 Deploy and analyze SIEM tools for monitoring and alerting
 
-#2. Lab Architecture & Network Topology
+# 2. Lab Architecture & Network Topology
+
+2.1 Virtualization Platform
+Hypervisor: Oracle VirtualBox (cross-platform compatibility)
+
+Networking Configuration:
+
+Adapter 1: NAT (Internet access)
+
+Adapter 2: Host-Only (internal isolated network)
+
+2.2 Virtual Machines Configuration
+
+VM Name       Purpose        Network Configuration        Key Tools
+-------------------------------------------------------------------------
+pfSense       Firewall         NAT + Host-Only         DHCP, Firewall  
+             & Gateway        (192.168.56.1/24)   
+                                 
