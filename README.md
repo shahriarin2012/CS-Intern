@@ -56,7 +56,7 @@ VM Name       Purpose        Network Configuration        Key Tools
    -----------------------------------------------------------------
 
    #  Step-by-Step Implementation
-     3.1 pfSense Firewall Configuration 
+   # 3.1 pfSense Firewall Configuration 
      
   Installation
 1. Downloaded the latest pfSense Community Edition ISO from the official website.
@@ -66,3 +66,19 @@ VM Name       Purpose        Network Configuration        Key Tools
      i)Adapter 1: NAT (for internet access).
      ii)Adapter 2: Host-Only (for internal LAN).
 3. Booted the VM, followed the pfSense installer prompts, and completed the setup.   
+
+# LAN Configuration
+
+1. Set the LAN interface IP to 192.168.56.1/24 via the pfSense web interface (accessible at https://192.168.56.1).
+
+2. Enabled the DHCP server to assign IPs in the range 192.168.56.100-200.
+
+3. Configured firewall rules:
+
+i)Allowed ICMP (ping) for network diagnostics.
+ii)Permitted HTTP/HTTPS for Security Onion’s Kibana dashboard.
+iii)Restricted SSH access to specific IPs (e.g., blocked Kali Linux from accessing Ubuntu Server).
+
+#Validation
+i)Verified connectivity by pinging the LAN IP from other VMs.
+ii)Confirmed DHCP assignments and firewall rule enforcement via the pfSense dashboard.
