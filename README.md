@@ -141,7 +141,156 @@ This analysis highlights the stealth and efficiency of SYN scans, commonly used 
 # Tool Validation
 
 1. Nmap: Conducted network discovery to identify live hosts:
-nmap -sP 192.168.56.0/24
+![alt text](image-8.png)
+
+![alt text](image-7.png)
+
+The above screenshots are results of an Nmap scan run from a Metasploitable VM to identify active hosts and open ports on the 192.168.232.0/24 subnet. Below is a detailed explanation of each screenshot:
+
+✅ Screenshot 1: Scan Summary of Multiple Hosts
+yaml
+Copy
+Edit
+Command: nmap 192.168.232.0/24
+Time: 2025-06-03 17:27 EDT
+Nmap Version: 4.53
+🔍 Host: 192.168.232.1
+Open Ports:
+
+902/tcp - iss-realsecure-sensor
+→ This port is typically used by VMware for remote management.
+
+912/tcp - unknown
+→ This port is open but Nmap doesn’t recognize the service. It may be used by a custom or uncommon application.
+
+MAC Address: 00:50:56:C0:00:08
+Vendor: VMware (virtual machine)
+
+🔍 Host: 192.168.232.2
+Open Ports:
+
+53/tcp - domain
+→ This is DNS (Domain Name System), often used by DNS servers.
+
+MAC Address: 00:50:56:E0:42:DC
+Vendor: VMware
+
+✅ Screenshot 2: Scan Result of Another Host
+🔍 Host: 192.168.232.254
+All 1714 scanned ports are filtered
+→ This indicates that a firewall or filtering mechanism is blocking all probes.
+
+MAC Address: 00:50:56:FC:43:6F
+Vendor: VMware
+
+This host is likely a router, firewall (like pfSense), or a hardened VM that drops or blocks Nmap probes.
+
+🔍 Previously Scanned Host (Before 254) — Possibly Metasploitable2
+Open Ports & Services:
+
+445/tcp - microsoft-ds
+
+512/tcp - exec
+
+513/tcp - login
+
+514/tcp - shell
+
+1524/tcp - ingreslock
+
+2049/tcp - nfs (Network File System)
+
+2121/tcp - ccpoxy-ftp (likely a typo or custom FTP service)
+
+3306/tcp - mysql
+
+3632/tcp - distccd (Distributed C/C++ compilation daemon)
+
+5432/tcp - postgres (PostgreSQL DB)
+
+5900/tcp - vnc (Virtual Network Computing)
+
+6000/tcp - X11 (GUI remote access)
+
+6667/tcp - irc (Internet Relay Chat)
+
+8009/tcp - ajp13 (Apache JServ Protocol)
+
+🟨 Note: These ports and services are intentionally exposed in Metasploitable2, a vulnerable machine meant for practicing penetration testing.
+
+📌 Conclusion
+Your Nmap scan revealed:
+
+IP Address	Open Ports & Services Summary	Host Type
+192.168.232.1	902 (VMware remote), 912 (unknown)	VMware host
+192.168.232.2	53 (DNS)	Possibly DNS server
+192.168.232.254	All ports filtered	Likely pfSense
+Metasploitable2	Numerous open ports (445, 3306, 5432, etc.)	Vulnerable target
+
+If this is part of your cybersecurity lab setup, then:
+
+192.168.232.254 is likely the pfSense firewall.
+
+192.168.232.2 may be DNS or internal server.
+
+192.168.232.1 could be the host machine or another VM.
+
+
+One of the machines with many services is your Metasploitable2 target.
+
+nmap -sP 192.168.232.0/24
+
+![alt text](image-9.png)
+
+The attached screenshot shows the result of an Nmap command executed from a terminal in a Kali/Metasploitable environment. Let's break it down in detail:
+
+🔍 Command Used:
+bash
+Copy
+Edit
+nmap -sP 192.168.232.0/24
+✅ What it means:
+nmap: A powerful network scanning tool used for network discovery and security auditing.
+
+-sP: This is an older option (now equivalent to -sn) that performs a ping scan — it checks which hosts are up (online) in the given subnet.
+
+192.168.232.0/24: This indicates a scan of the entire subnet from 192.168.232.0 to 192.168.232.255 (i.e., 256 IP addresses in total).
+
+📋 Scan Output Analysis:
+Nmap version: 4.53
+
+The scan was performed at: 2025-06-03 17:32 EDT
+
+🔸 Detected Hosts (4 hosts are up):
+IP Address	MAC Address	Vendor	Status
+192.168.232.1	00:50:56:C0:00:08	VMWare	Online (Up)
+192.168.232.2	00:50:56:E0:42:DC	VMWare	Online (Up)
+192.168.232.130	(MAC not shown)	?	Online (Up)
+192.168.232.254	00:50:56:FC:43:6F	VMWare	Online (Up)
+
+The MAC addresses indicate that these systems are virtual machines running on VMWare.
+
+All MAC addresses are prefixed with 00:50:56, which is the Organizationally Unique Identifier (OUI) for VMware, Inc.
+
+192.168.232.130 is a bit unusual in that its MAC is not shown, which may be due to a limitation or a system/network setting.
+
+🧠 Key Observations:
+Virtual Environment: All detected hosts are virtual, as indicated by their MAC vendor (VMWare).
+
+Network is Up and Running: 4 devices are online and responding to ping requests.
+
+Common Setup: This is typical in a cybersecurity lab environment where:
+
+.1 is often the gateway.
+
+.2, .130, or .254 could be Kali Linux, Metasploitable2, Security Onion, or pfSense depending on your lab configuration.
+
+Performance: The scan completed 256 IPs in just 4.104 seconds, which is efficient for a ping sweep.
+
+✅ Summary:
+This is a network discovery scan using nmap -sP, and it successfully identified 4 active machines on the 192.168.232.0/24 subnet — all part of a virtualized environment (likely for a cybersecurity lab). This kind of scan is typically the first step in reconnaissance before deeper vulnerability or port scanning.
+
+Let me know if you'd like a network diagram, a follow-up full scan (like -sS), or identification of these IPs based on common lab setups.
 
 2. Metasploit: Launched msfconsole and verified exploit module availability.
 
@@ -329,6 +478,6 @@ This project successfully simulated a real-world cybersecurity environment, enab
 
 
 Prepared by:
-Mohammad Shahriar
-571-337-1766
-shahriarin2012@gmail.com
+Mohammad Shahriar , 
+Contact # 571-337-1766 , 
+Email: shahriarin2012@gmail.com
