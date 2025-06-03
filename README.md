@@ -219,7 +219,7 @@ Open Ports & Services:
 🟨 Note: These ports and services are intentionally exposed in Metasploitable2, a vulnerable machine meant for practicing penetration testing.
 
 📌 Conclusion
-Your Nmap scan revealed:
+Nmap scan revealed:
 
 IP Address	Open Ports & Services Summary	Host Type
 192.168.232.1	902 (VMware remote), 912 (unknown)	VMware host
