@@ -26,7 +26,7 @@ The lab incorporates the following components:
 
 *) Ubuntu Server as an optional internal host
 
-*) Primary Objectives:
+ Primary Objectives:
 
 Build a controlled cybersecurity training lab
 
@@ -38,7 +38,7 @@ Deploy and analyze SIEM tools for monitoring and alerting
 
 # 2. Lab Architecture & Network Topology
 
-2.1 Virtualization Platform
+#2.1 Virtualization Platform
 Hypervisor: Oracle VirtualBox (cross-platform compatibility)
 
 Networking Configuration:
@@ -47,10 +47,10 @@ Adapter 1: NAT (Internet access)
 
 Adapter 2: Host-Only (internal isolated network)
 
-2.2 Virtual Machines Configuration
+#2.2 Virtual Machines Configuration
 
 VM Name       Purpose        Network Configuration        Key Tools
--------------------------------------------------------------------------
-pfSense       Firewall         NAT + Host-Only         DHCP, Firewall  
-             & Gateway        (192.168.56.1/24)   
-                                 
+------------------------------------------------------------------- 
+   ![alt text](image-1.png)  
+
+   test        
