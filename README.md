@@ -53,4 +53,16 @@ VM Name       Purpose        Network Configuration        Key Tools
 ------------------------------------------------------------------- 
    ![alt text](image-1.png)  
 
-   test        
+   -----------------------------------------------------------------
+
+   #  Step-by-Step Implementation
+     3.1 pfSense Firewall Configuration 
+     
+  Installation
+1. Downloaded the latest pfSense Community Edition ISO from the official website.
+2. Created a new VM in VirtualBox with:
+ *)GB RAM, 2 CPUs, 20 GB storage.
+ *)Two network adapters:
+     i)Adapter 1: NAT (for internet access).
+     ii)Adapter 2: Host-Only (for internal LAN).
+3. Booted the VM, followed the pfSense installer prompts, and completed the setup.   
