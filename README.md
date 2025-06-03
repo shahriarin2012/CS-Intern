@@ -9,5 +9,31 @@ A professional-grade cybersecurity lab environment with VM setups, network confi
 
 *)Task Start date: 05-21-2025
 
-*)Task End Date: 05-23-2025
+*)Task End Date: 06-02-2025
 
+# 1. Executive Summary
+This report outlines the design and implementation of a comprehensive cybersecurity lab environment to simulate real-world offensive and defensive security operations. Utilizing a multi-virtual machine (VM) architecture, the lab enables hands-on experience in vulnerability assessment, penetration testing, threat detection, and incident response.
+
+The lab incorporates the following components:
+
+Kali Linux as the attacker machine
+
+Metasploitable2 as the vulnerable target
+
+Security Onion as the monitoring and alerting system
+
+pfSense as the firewall and gateway
+
+Ubuntu Server as an optional internal host
+
+Primary Objectives:
+
+Build a controlled cybersecurity training lab
+
+Develop practical skills in offensive and defensive security
+
+Conduct vulnerability assessments and penetration testing
+
+Deploy and analyze SIEM tools for monitoring and alerting
+
+#2. Lab Architecture & Network Topology
